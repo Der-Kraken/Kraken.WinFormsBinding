@@ -21,22 +21,24 @@ namespace Kraken.WinFormsBinding.View
 
         private void SetupBinding()
         {
+            var bindingSource = new BindingSource(this, nameof(ViewModel));
+
             // Left Side - Singleton SubViewModel
             {
-                SingletonSubViewModelTxt.DataBindings.Add("Text", ViewModel, "SingletonSubViewModel.Number", false, DataSourceUpdateMode.OnPropertyChanged);
+                SingletonSubViewModelTxt.DataBindings.Add("Text", bindingSource, "SingletonSubViewModel.Number", false, DataSourceUpdateMode.OnPropertyChanged);
 
-                subViewSingleton.DataBindings.Add("ViewModel", ViewModel, "SingletonSubViewModel");
-                subViewSingletonClone.DataBindings.Add("ViewModel", ViewModel, "SingletonSubViewModel");
+                subViewSingleton.DataBindings.Add("ViewModel", bindingSource, "SingletonSubViewModel");
+                subViewSingletonClone.DataBindings.Add("ViewModel", bindingSource, "SingletonSubViewModel");
             }
 
             // Right Side - Newest SubViewModel
             {
                 // !!! The problematic binding below !!!
-                NewestSubViewModelTxt.DataBindings.Add("Text", ViewModel, "NewestSubViewModel.Number", false, DataSourceUpdateMode.OnPropertyChanged);
+                NewestSubViewModelTxt.DataBindings.Add("Text", bindingSource, "NewestSubViewModel.Number", false, DataSourceUpdateMode.OnPropertyChanged);
 
                 // This bindings are working well
-                subViewNewest.DataBindings.Add("ViewModel", ViewModel, "NewestSubViewModel");
-                subViewNewestClone.DataBindings.Add("ViewModel", ViewModel, "NewestSubViewModel");
+                subViewNewest.DataBindings.Add("ViewModel", bindingSource, "NewestSubViewModel");
+                subViewNewestClone.DataBindings.Add("ViewModel", bindingSource, "NewestSubViewModel");
             }
         }
 
