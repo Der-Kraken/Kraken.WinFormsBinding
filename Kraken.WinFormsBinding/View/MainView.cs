@@ -32,7 +32,7 @@ namespace Kraken.WinFormsBinding.View
             // Right Side - Newest SubViewModel
             {
                 // !!! The problematic binding below !!!
-                NewestSubViewModel.DataBindings.Add("Text", ViewModel, "NewestSubViewModel.Number", false, DataSourceUpdateMode.OnPropertyChanged);
+                NewestSubViewModelTxt.DataBindings.Add("Text", ViewModel, "NewestSubViewModel.Number", false, DataSourceUpdateMode.OnPropertyChanged);
 
                 // This bindings are working well
                 subViewNewest.DataBindings.Add("ViewModel", ViewModel, "NewestSubViewModel");

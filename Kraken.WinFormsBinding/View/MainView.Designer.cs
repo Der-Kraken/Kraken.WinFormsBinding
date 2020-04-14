@@ -36,7 +36,7 @@ namespace Kraken.WinFormsBinding.View
             this.groupBox3 = new System.Windows.Forms.GroupBox();
             this.SingletonSubViewModelTxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
-            this.NewestSubViewModel = new System.Windows.Forms.TextBox();
+            this.NewestSubViewModelTxt = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
             this.subViewNewestClone = new Kraken.WinFormsBinding.View.SubView();
@@ -101,7 +101,7 @@ namespace Kraken.WinFormsBinding.View
             // 
             this.groupBox3.Controls.Add(this.SingletonSubViewModelTxt);
             this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.NewestSubViewModel);
+            this.groupBox3.Controls.Add(this.NewestSubViewModelTxt);
             this.groupBox3.Controls.Add(this.label2);
             this.groupBox3.Controls.Add(this.NewSubViewModelBtn);
             this.groupBox3.Dock = System.Windows.Forms.DockStyle.Top;
@@ -128,12 +128,12 @@ namespace Kraken.WinFormsBinding.View
             this.label3.TabIndex = 11;
             this.label3.Text = "Singleton Number";
             // 
-            // NewestSubViewModel
+            // NewestSubViewModelTxt
             // 
-            this.NewestSubViewModel.Location = new System.Drawing.Point(228, 73);
-            this.NewestSubViewModel.Name = "NewestSubViewModel";
-            this.NewestSubViewModel.Size = new System.Drawing.Size(100, 20);
-            this.NewestSubViewModel.TabIndex = 10;
+            this.NewestSubViewModelTxt.Location = new System.Drawing.Point(228, 73);
+            this.NewestSubViewModelTxt.Name = "NewestSubViewModelTxt";
+            this.NewestSubViewModelTxt.Size = new System.Drawing.Size(100, 20);
+            this.NewestSubViewModelTxt.TabIndex = 10;
             // 
             // label2
             // 
@@ -219,7 +219,7 @@ namespace Kraken.WinFormsBinding.View
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Button NewSubViewModelBtn;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox NewestSubViewModel;
+        private System.Windows.Forms.TextBox NewestSubViewModelTxt;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.TextBox SingletonSubViewModelTxt;
         private System.Windows.Forms.Label label3;
