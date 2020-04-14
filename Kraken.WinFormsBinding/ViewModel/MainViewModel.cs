@@ -14,11 +14,9 @@ namespace Kraken.WinFormsBinding.ViewModel
         {
             SingletonSubViewModel = new SubViewModel();
             NewestSubViewModel = SingletonSubViewModel;
-
-            NewSubCommand = new RelayCommand(NewSubExecute, NewSubCanExecute);
         }
 
-        // Properties
+        // SubViewModels
 
         public SubViewModel SingletonSubViewModel { get; }
 
@@ -26,20 +24,9 @@ namespace Kraken.WinFormsBinding.ViewModel
 
         // Commands
 
-        #region NewSubCommand
-
-        public ICommand NewSubCommand { get; private set; }
-
-        private bool NewSubCanExecute()
-        {
-            return true;
-        }
-
-        private void NewSubExecute()
+        public ICommand NewSubCommand => new RelayCommand(() =>
         {
             NewestSubViewModel = new SubViewModel();
-        }
-
-        #endregion
+        });
     }
 }

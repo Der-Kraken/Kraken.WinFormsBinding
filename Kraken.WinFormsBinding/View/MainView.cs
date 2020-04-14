@@ -21,15 +21,23 @@ namespace Kraken.WinFormsBinding.View
 
         private void SetupBinding()
         {
-            subViewSingleton.DataBindings.Add(nameof(subViewSingleton.ViewModel), ViewModel, nameof(ViewModel.SingletonSubViewModel));
-            subViewNewest.DataBindings.Add(nameof(subViewNewest.ViewModel), ViewModel, nameof(ViewModel.NewestSubViewModel));
+            // Left Side - Singleton SubViewModel
+            {
+                SingletonSubViewModelTxt.DataBindings.Add("Text", ViewModel, "SingletonSubViewModel.Number", false, DataSourceUpdateMode.OnPropertyChanged);
 
-            subViewSingletonClone.DataBindings.Add(nameof(subViewSingletonClone.ViewModel), ViewModel, nameof(ViewModel.SingletonSubViewModel));
-            subViewNewestClone.DataBindings.Add(nameof(subViewNewestClone.ViewModel), ViewModel, nameof(ViewModel.NewestSubViewModel));
+                subViewSingleton.DataBindings.Add("ViewModel", ViewModel, "SingletonSubViewModel");
+                subViewSingletonClone.DataBindings.Add("ViewModel", ViewModel, "SingletonSubViewModel");
+            }
 
-            SingletonSubViewModelTxt.DataBindings.Add(nameof(SingletonSubViewModelTxt.Text), ViewModel, "SingletonSubViewModel.Number", false, DataSourceUpdateMode.OnPropertyChanged);
-            // !!! The problematic binding below !!!
-            NewestSubViewModel.DataBindings.Add(nameof(NewestSubViewModel.Text), ViewModel, "NewestSubViewModel.Number", false, DataSourceUpdateMode.OnPropertyChanged);
+            // Right Side - Newest SubViewModel
+            {
+                // !!! The problematic binding below !!!
+                NewestSubViewModel.DataBindings.Add("Text", ViewModel, "NewestSubViewModel.Number", false, DataSourceUpdateMode.OnPropertyChanged);
+
+                // This bindings are working well
+                subViewNewest.DataBindings.Add("ViewModel", ViewModel, "NewestSubViewModel");
+                subViewNewestClone.DataBindings.Add("ViewModel", ViewModel, "NewestSubViewModel");
+            }
         }
 
         // Other
