@@ -6,6 +6,8 @@ namespace Kraken.WinFormsBinding.View
 {
     public partial class SubView : UserControl
     {
+        BindingSource _bindingSource;
+
         public SubView()
         {
             InitializeComponent();
@@ -35,12 +37,17 @@ namespace Kraken.WinFormsBinding.View
 
         private void SetupBinding()
         {
-            GenerationLbl.DataBindings.Add(nameof(GenerationLbl.Text), ViewModel, nameof(ViewModel.Generation), false, DataSourceUpdateMode.OnPropertyChanged);
-            NumberTxt.DataBindings.Add(nameof(NumberTxt.Text), ViewModel, nameof(ViewModel.Number), false, DataSourceUpdateMode.OnPropertyChanged);
+            _bindingSource = new BindingSource(this, nameof(ViewModel));
+
+            GenerationLbl.DataBindings.Add(nameof(GenerationLbl.Text), _bindingSource, nameof(ViewModel.Generation), false, DataSourceUpdateMode.OnPropertyChanged);
+            NumberTxt.DataBindings.Add(nameof(NumberTxt.Text), _bindingSource, nameof(ViewModel.Number), false, DataSourceUpdateMode.OnPropertyChanged);
         }
 
         private void Unbind()
         {
+            _bindingSource.Dispose();
+            _bindingSource = null;
+
             GenerationLbl.DataBindings.Clear();
             NumberTxt.DataBindings.Clear();
         }
