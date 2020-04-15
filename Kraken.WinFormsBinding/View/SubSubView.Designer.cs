@@ -1,6 +1,6 @@
 ﻿namespace Kraken.WinFormsBinding.View
 {
-    partial class SubView
+    partial class SubSubView
     {
         /// <summary> 
         /// Erforderliche Designervariable.
@@ -28,66 +28,49 @@
         /// </summary>
         private void InitializeComponent()
         {
-            this.NumberTxt = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.GenerationLbl = new System.Windows.Forms.Label();
+            this.SubSubTxt = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
-            this.subSubView1 = new Kraken.WinFormsBinding.View.SubSubView();
             this.SuspendLayout();
-            // 
-            // NumberTxt
-            // 
-            this.NumberTxt.Location = new System.Drawing.Point(16, 42);
-            this.NumberTxt.Name = "NumberTxt";
-            this.NumberTxt.Size = new System.Drawing.Size(86, 20);
-            this.NumberTxt.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(13, 9);
+            this.label1.Location = new System.Drawing.Point(3, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(68, 16);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "SubView";
+            this.label1.Size = new System.Drawing.Size(84, 16);
+            this.label1.TabIndex = 0;
+            this.label1.Text = "SubSubVM";
             // 
-            // GenerationLbl
+            // SubSubTxt
             // 
-            this.GenerationLbl.AutoSize = true;
-            this.GenerationLbl.Location = new System.Drawing.Point(87, 12);
-            this.GenerationLbl.Name = "GenerationLbl";
-            this.GenerationLbl.Size = new System.Drawing.Size(35, 13);
-            this.GenerationLbl.TabIndex = 2;
-            this.GenerationLbl.Text = "label2";
+            this.SubSubTxt.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.SubSubTxt.Location = new System.Drawing.Point(6, 19);
+            this.SubSubTxt.Name = "SubSubTxt";
+            this.SubSubTxt.Size = new System.Drawing.Size(96, 20);
+            this.SubSubTxt.TabIndex = 1;
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(108, 42);
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.button1.Location = new System.Drawing.Point(108, 16);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(14, 23);
-            this.button1.TabIndex = 3;
+            this.button1.Size = new System.Drawing.Size(16, 23);
+            this.button1.TabIndex = 2;
             this.button1.Text = ".";
             this.button1.UseVisualStyleBackColor = true;
             // 
-            // subSubView1
-            // 
-            this.subSubView1.Location = new System.Drawing.Point(11, 71);
-            this.subSubView1.Name = "subSubView1";
-            this.subSubView1.Size = new System.Drawing.Size(111, 55);
-            this.subSubView1.TabIndex = 4;
-            // 
-            // SubView
+            // SubSubView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.Controls.Add(this.subSubView1);
             this.Controls.Add(this.button1);
-            this.Controls.Add(this.GenerationLbl);
+            this.Controls.Add(this.SubSubTxt);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.NumberTxt);
-            this.Name = "SubView";
-            this.Size = new System.Drawing.Size(130, 137);
+            this.Name = "SubSubView";
+            this.Size = new System.Drawing.Size(130, 48);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -95,10 +78,8 @@
 
         #endregion
 
-        private System.Windows.Forms.TextBox NumberTxt;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Label GenerationLbl;
+        private System.Windows.Forms.TextBox SubSubTxt;
         private System.Windows.Forms.Button button1;
-        private SubSubView subSubView1;
     }
 }

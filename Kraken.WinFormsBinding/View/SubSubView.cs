@@ -4,16 +4,16 @@ using System.Windows.Forms;
 
 namespace Kraken.WinFormsBinding.View
 {
-    public partial class SubView : UserControl
+    public partial class SubSubView : UserControl
     {
-        public SubView()
+        public SubSubView()
         {
             InitializeComponent();
         }
 
-        private SubViewModel _viewModel;
+        private SubSubViewModel _viewModel;
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
-        public SubViewModel ViewModel
+        public SubSubViewModel ViewModel
         {
             get => _viewModel;
             set
@@ -35,18 +35,12 @@ namespace Kraken.WinFormsBinding.View
 
         private void SetupBinding()
         {
-            GenerationLbl.DataBindings.Add(nameof(GenerationLbl.Text), ViewModel, nameof(ViewModel.Generation), false, DataSourceUpdateMode.OnPropertyChanged);
-            NumberTxt.DataBindings.Add(nameof(NumberTxt.Text), ViewModel, nameof(ViewModel.Number), false, DataSourceUpdateMode.OnPropertyChanged);
-
-            subSubView1.DataBindings.Add("ViewModel", ViewModel, "SubSubViewModel");
+            SubSubTxt.DataBindings.Add(nameof(SubSubTxt.Text), ViewModel, nameof(ViewModel.SubSubText), false, DataSourceUpdateMode.OnPropertyChanged);
         }
 
         private void Unbind()
         {
-            GenerationLbl.DataBindings.Clear();
-            NumberTxt.DataBindings.Clear();
-
-            subSubView1.DataBindings.Clear();
+            SubSubTxt.DataBindings.Clear();
         }
     }
 }

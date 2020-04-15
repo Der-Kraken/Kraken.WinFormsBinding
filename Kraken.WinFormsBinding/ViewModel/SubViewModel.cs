@@ -8,7 +8,16 @@ namespace Kraken.WinFormsBinding.ViewModel
         {
             Generation = Counter++;
             Number = Generation;
+
+            SubSubViewModel = new SubSubViewModel();
         }
+
+        // Properties - SubViewModels
+
+        private SubSubViewModel _subSubViewModel;
+        public SubSubViewModel SubSubViewModel { get => _subSubViewModel; private set => SetValue(ref _subSubViewModel, value); }
+
+        // Properties
 
         public int Generation { get; }
 
