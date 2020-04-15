@@ -6,12 +6,15 @@ namespace Kraken.WinFormsBinding.View
 {
     public partial class SubSubView : UserControl
     {
+        private BindingSource _bindingSource;
+
         public SubSubView()
         {
             InitializeComponent();
         }
 
         private SubSubViewModel _viewModel;
+
         [DesignerSerializationVisibility(DesignerSerializationVisibility.Hidden)]
         public SubSubViewModel ViewModel
         {
@@ -35,11 +38,16 @@ namespace Kraken.WinFormsBinding.View
 
         private void SetupBinding()
         {
-            SubSubTxt.DataBindings.Add(nameof(SubSubTxt.Text), ViewModel, nameof(ViewModel.SubSubText), false, DataSourceUpdateMode.OnPropertyChanged);
+            _bindingSource = new BindingSource(this, nameof(ViewModel));
+
+            SubSubTxt.DataBindings.Add(nameof(SubSubTxt.Text), _bindingSource, nameof(ViewModel.SubSubText), false, DataSourceUpdateMode.OnPropertyChanged);
         }
 
         private void Unbind()
         {
+            _bindingSource.Dispose();
+            _bindingSource = null;
+
             SubSubTxt.DataBindings.Clear();
         }
     }
