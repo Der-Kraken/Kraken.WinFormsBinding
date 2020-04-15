@@ -25,7 +25,8 @@ namespace Kraken.WinFormsBinding.View
 
             // Left Side - Singleton SubViewModel
             {
-                SingletonSubViewModelTxt.DataBindings.Add("Text", bindingSource, "SingletonSubViewModel.Number", false, DataSourceUpdateMode.OnPropertyChanged);
+                SingletonSubViewModelNumberTxt.DataBindings.Add("Text", bindingSource, "SingletonSubViewModel.Number", false, DataSourceUpdateMode.OnPropertyChanged);
+                SingletonSubSubViewModelTextTxt.DataBindings.Add("Text", bindingSource, "SingletonSubViewModel.SubSubViewModel.SubSubText", false, DataSourceUpdateMode.OnPropertyChanged);
 
                 subViewSingleton.DataBindings.Add("ViewModel", bindingSource, "SingletonSubViewModel");
                 subViewSingletonClone.DataBindings.Add("ViewModel", bindingSource, "SingletonSubViewModel");
@@ -33,8 +34,10 @@ namespace Kraken.WinFormsBinding.View
 
             // Right Side - Newest SubViewModel
             {
+                // The binding below only work because dataSource is from type BindingSource.
+                NewestSubViewModelNumberTxt.DataBindings.Add("Text", bindingSource, "NewestSubViewModel.Number", false, DataSourceUpdateMode.OnPropertyChanged);
                 // !!! The problematic binding below !!!
-                NewestSubViewModelTxt.DataBindings.Add("Text", bindingSource, "NewestSubViewModel.Number", false, DataSourceUpdateMode.OnPropertyChanged);
+                NewestSubSubViewModelTextTxt.DataBindings.Add("Text", bindingSource, "NewestSubViewModel.SubSubViewModel.SubSubText", false, DataSourceUpdateMode.OnPropertyChanged);
 
                 // This bindings are working well
                 subViewNewest.DataBindings.Add("ViewModel", bindingSource, "NewestSubViewModel");
