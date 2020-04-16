@@ -54,6 +54,9 @@
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\MetaHelper.cs" />
+    <Compile Include="Tools\PropertyChangedObserver.cs" />
+    <Compile Include="Tools\TypeSafeMagicStrings.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\SubSubViewModel.cs" />
     <Compile Include="ViewModel\_baseClasses\RelayCommand.cs" />

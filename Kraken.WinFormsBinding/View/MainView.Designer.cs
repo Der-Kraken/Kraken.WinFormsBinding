@@ -34,6 +34,10 @@ namespace Kraken.WinFormsBinding.View
             this.subViewNewest = new Kraken.WinFormsBinding.View.SubView();
             this.NewSubViewModelBtn = new System.Windows.Forms.Button();
             this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.SingletonSubSubViewModelTextTxt = new System.Windows.Forms.TextBox();
+            this.label4 = new System.Windows.Forms.Label();
+            this.NewestSubSubViewModelTextTxt = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.SingletonSubViewModelNumberTxt = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
             this.NewestSubViewModelNumberTxt = new System.Windows.Forms.TextBox();
@@ -43,10 +47,6 @@ namespace Kraken.WinFormsBinding.View
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.subViewSingletonClone = new Kraken.WinFormsBinding.View.SubView();
             this.label1 = new System.Windows.Forms.Label();
-            this.SingletonSubSubViewModelTextTxt = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.NewestSubSubViewModelTextTxt = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -59,7 +59,7 @@ namespace Kraken.WinFormsBinding.View
             this.groupBox1.Controls.Add(this.subViewSingleton);
             this.groupBox1.Location = new System.Drawing.Point(18, 165);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(147, 146);
+            this.groupBox1.Size = new System.Drawing.Size(147, 179);
             this.groupBox1.TabIndex = 5;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Singleton SubViewModel";
@@ -69,7 +69,7 @@ namespace Kraken.WinFormsBinding.View
             this.subViewSingleton.Dock = System.Windows.Forms.DockStyle.Fill;
             this.subViewSingleton.Location = new System.Drawing.Point(3, 16);
             this.subViewSingleton.Name = "subViewSingleton";
-            this.subViewSingleton.Size = new System.Drawing.Size(141, 127);
+            this.subViewSingleton.Size = new System.Drawing.Size(141, 160);
             this.subViewSingleton.TabIndex = 0;
             // 
             // groupBox2
@@ -77,7 +77,7 @@ namespace Kraken.WinFormsBinding.View
             this.groupBox2.Controls.Add(this.subViewNewest);
             this.groupBox2.Location = new System.Drawing.Point(193, 165);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(146, 146);
+            this.groupBox2.Size = new System.Drawing.Size(146, 179);
             this.groupBox2.TabIndex = 6;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Newest SubViewModel";
@@ -87,7 +87,7 @@ namespace Kraken.WinFormsBinding.View
             this.subViewNewest.Dock = System.Windows.Forms.DockStyle.Fill;
             this.subViewNewest.Location = new System.Drawing.Point(3, 16);
             this.subViewNewest.Name = "subViewNewest";
-            this.subViewNewest.Size = new System.Drawing.Size(140, 127);
+            this.subViewNewest.Size = new System.Drawing.Size(140, 160);
             this.subViewNewest.TabIndex = 1;
             // 
             // NewSubViewModelBtn
@@ -119,6 +119,38 @@ namespace Kraken.WinFormsBinding.View
             this.groupBox3.TabIndex = 8;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "MainViewModel";
+            // 
+            // SingletonSubSubViewModelTextTxt
+            // 
+            this.SingletonSubSubViewModelTextTxt.Location = new System.Drawing.Point(31, 117);
+            this.SingletonSubSubViewModelTextTxt.Name = "SingletonSubSubViewModelTextTxt";
+            this.SingletonSubSubViewModelTextTxt.Size = new System.Drawing.Size(100, 20);
+            this.SingletonSubSubViewModelTextTxt.TabIndex = 16;
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Location = new System.Drawing.Point(28, 101);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(113, 13);
+            this.label4.TabIndex = 15;
+            this.label4.Text = "Singleton SubSubText";
+            // 
+            // NewestSubSubViewModelTextTxt
+            // 
+            this.NewestSubSubViewModelTextTxt.Location = new System.Drawing.Point(215, 117);
+            this.NewestSubSubViewModelTextTxt.Name = "NewestSubSubViewModelTextTxt";
+            this.NewestSubSubViewModelTextTxt.Size = new System.Drawing.Size(100, 20);
+            this.NewestSubSubViewModelTextTxt.TabIndex = 14;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(212, 101);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(108, 13);
+            this.label5.TabIndex = 13;
+            this.label5.Text = "Newest SubSub Text";
             // 
             // SingletonSubViewModelNumberTxt
             // 
@@ -155,9 +187,9 @@ namespace Kraken.WinFormsBinding.View
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.subViewNewestClone);
-            this.groupBox4.Location = new System.Drawing.Point(193, 328);
+            this.groupBox4.Location = new System.Drawing.Point(193, 363);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(143, 143);
+            this.groupBox4.Size = new System.Drawing.Size(143, 179);
             this.groupBox4.TabIndex = 8;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Clone Newest SubVM";
@@ -167,15 +199,15 @@ namespace Kraken.WinFormsBinding.View
             this.subViewNewestClone.Dock = System.Windows.Forms.DockStyle.Fill;
             this.subViewNewestClone.Location = new System.Drawing.Point(3, 16);
             this.subViewNewestClone.Name = "subViewNewestClone";
-            this.subViewNewestClone.Size = new System.Drawing.Size(137, 124);
+            this.subViewNewestClone.Size = new System.Drawing.Size(137, 160);
             this.subViewNewestClone.TabIndex = 1;
             // 
             // groupBox5
             // 
             this.groupBox5.Controls.Add(this.subViewSingletonClone);
-            this.groupBox5.Location = new System.Drawing.Point(15, 328);
+            this.groupBox5.Location = new System.Drawing.Point(15, 363);
             this.groupBox5.Name = "groupBox5";
-            this.groupBox5.Size = new System.Drawing.Size(147, 143);
+            this.groupBox5.Size = new System.Drawing.Size(147, 179);
             this.groupBox5.TabIndex = 7;
             this.groupBox5.TabStop = false;
             this.groupBox5.Text = "Clone Singleton SubVM";
@@ -185,7 +217,7 @@ namespace Kraken.WinFormsBinding.View
             this.subViewSingletonClone.Dock = System.Windows.Forms.DockStyle.Fill;
             this.subViewSingletonClone.Location = new System.Drawing.Point(3, 16);
             this.subViewSingletonClone.Name = "subViewSingletonClone";
-            this.subViewSingletonClone.Size = new System.Drawing.Size(141, 124);
+            this.subViewSingletonClone.Size = new System.Drawing.Size(141, 160);
             this.subViewSingletonClone.TabIndex = 3;
             // 
             // label1
@@ -198,38 +230,6 @@ namespace Kraken.WinFormsBinding.View
             this.label1.TabIndex = 9;
             this.label1.Text = "----------------------------------------------";
             // 
-            // SingletonSubSubViewModelTextTxt
-            // 
-            this.SingletonSubSubViewModelTextTxt.Location = new System.Drawing.Point(31, 117);
-            this.SingletonSubSubViewModelTextTxt.Name = "SingletonSubSubViewModelTextTxt";
-            this.SingletonSubSubViewModelTextTxt.Size = new System.Drawing.Size(100, 20);
-            this.SingletonSubSubViewModelTextTxt.TabIndex = 16;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(28, 101);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(113, 13);
-            this.label4.TabIndex = 15;
-            this.label4.Text = "Singleton SubSubText";
-            // 
-            // NewestSubSubViewModelTextTxt
-            // 
-            this.NewestSubSubViewModelTextTxt.Location = new System.Drawing.Point(215, 117);
-            this.NewestSubSubViewModelTextTxt.Name = "NewestSubSubViewModelTextTxt";
-            this.NewestSubSubViewModelTextTxt.Size = new System.Drawing.Size(100, 20);
-            this.NewestSubSubViewModelTextTxt.TabIndex = 14;
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(212, 101);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(108, 13);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Newest SubSub Text";
-            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -241,7 +241,7 @@ namespace Kraken.WinFormsBinding.View
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Name = "MainView";
-            this.Size = new System.Drawing.Size(354, 484);
+            this.Size = new System.Drawing.Size(354, 552);
             this.groupBox1.ResumeLayout(false);
             this.groupBox2.ResumeLayout(false);
             this.groupBox3.ResumeLayout(false);

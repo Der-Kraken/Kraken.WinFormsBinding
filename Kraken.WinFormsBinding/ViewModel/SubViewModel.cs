@@ -1,3 +1,5 @@
+using System.Windows.Input;
+
 namespace Kraken.WinFormsBinding.ViewModel
 {
     public class SubViewModel : ViewModelBase
@@ -23,5 +25,12 @@ namespace Kraken.WinFormsBinding.ViewModel
 
         private int _number;
         public int Number { get => _number; set => SetValue(ref _number, value); }
+
+        // Commands
+
+        public ICommand NewSubSubCommand => new RelayCommand(() =>
+        {
+            SubSubViewModel = new SubSubViewModel();
+        });
     }
 }

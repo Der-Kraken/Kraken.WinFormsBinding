@@ -1,3 +1,4 @@
+using Kraken.WinFormsBinding.Tools;
 using Kraken.WinFormsBinding.ViewModel;
 using System.Windows.Forms;
 
@@ -26,7 +27,11 @@ namespace Kraken.WinFormsBinding.View
             // Left Side - Singleton SubViewModel
             {
                 SingletonSubViewModelNumberTxt.DataBindings.Add("Text", bindingSource, "SingletonSubViewModel.Number", false, DataSourceUpdateMode.OnPropertyChanged);
-                SingletonSubSubViewModelTextTxt.DataBindings.Add("Text", bindingSource, "SingletonSubViewModel.SubSubViewModel.SubSubText", false, DataSourceUpdateMode.OnPropertyChanged);
+                {
+                    string path = TypeSafeMagicStrings.GetPropertyPath<MainViewModel>(vm => vm.SingletonSubViewModel.SubSubViewModel.SubSubText);
+                    var binding = SingletonSubSubViewModelTextTxt.DataBindings.Add("Text", bindingSource, path, false, DataSourceUpdateMode.OnPropertyChanged);
+                    ObserveBindingPath(bindingSource, path);
+                }
 
                 subViewSingleton.DataBindings.Add("ViewModel", bindingSource, "SingletonSubViewModel");
                 subViewSingletonClone.DataBindings.Add("ViewModel", bindingSource, "SingletonSubViewModel");
@@ -37,7 +42,11 @@ namespace Kraken.WinFormsBinding.View
                 // The binding below only work because dataSource is from type BindingSource.
                 NewestSubViewModelNumberTxt.DataBindings.Add("Text", bindingSource, "NewestSubViewModel.Number", false, DataSourceUpdateMode.OnPropertyChanged);
                 // !!! The problematic binding below !!!
-                NewestSubSubViewModelTextTxt.DataBindings.Add("Text", bindingSource, "NewestSubViewModel.SubSubViewModel.SubSubText", false, DataSourceUpdateMode.OnPropertyChanged);
+                {
+                    string path = "NewestSubViewModel.SubSubViewModel.SubSubText";
+                    var binding = NewestSubSubViewModelTextTxt.DataBindings.Add("Text", bindingSource, path, false, DataSourceUpdateMode.OnPropertyChanged);
+                    ObserveBindingPath(bindingSource, path);
+                }
 
                 // This bindings are working well
                 subViewNewest.DataBindings.Add("ViewModel", bindingSource, "NewestSubViewModel");
@@ -51,6 +60,16 @@ namespace Kraken.WinFormsBinding.View
         {
             // Command is hard executed because to focus the project to the main problem.
             ViewModel.NewSubCommand.Execute(null);
+        }
+
+        public void ObserveBindingPath(BindingSource bindingSource, string propPath)
+        {
+            var resolver = new PropertyChangedObserver(ViewModel, propPath);
+            resolver.StartObserving();
+            resolver.ObservablePropertyChanged += (s, e) =>
+            {
+                bindingSource.ResetBindings(false);
+            };
         }
     }
 }

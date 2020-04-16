@@ -1,4 +1,4 @@
-﻿namespace Kraken.WinFormsBinding.View
+namespace Kraken.WinFormsBinding.View
 {
     partial class SubView
     {
@@ -33,6 +33,7 @@
             this.GenerationLbl = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
             this.subSubView1 = new Kraken.WinFormsBinding.View.SubSubView();
+            this.NewSubSubVMBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // NumberTxt
@@ -72,22 +73,33 @@
             // 
             // subSubView1
             // 
-            this.subSubView1.Location = new System.Drawing.Point(11, 71);
+            this.subSubView1.Location = new System.Drawing.Point(16, 101);
             this.subSubView1.Name = "subSubView1";
             this.subSubView1.Size = new System.Drawing.Size(111, 55);
             this.subSubView1.TabIndex = 4;
+            // 
+            // NewSubSubVMBtn
+            // 
+            this.NewSubSubVMBtn.Location = new System.Drawing.Point(16, 72);
+            this.NewSubSubVMBtn.Name = "NewSubSubVMBtn";
+            this.NewSubSubVMBtn.Size = new System.Drawing.Size(106, 23);
+            this.NewSubSubVMBtn.TabIndex = 5;
+            this.NewSubSubVMBtn.Text = "New SubSubVM";
+            this.NewSubSubVMBtn.UseVisualStyleBackColor = true;
+            this.NewSubSubVMBtn.Click += new System.EventHandler(this.NewSubSubVMBtn_Click);
             // 
             // SubView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.NewSubSubVMBtn);
             this.Controls.Add(this.subSubView1);
             this.Controls.Add(this.button1);
             this.Controls.Add(this.GenerationLbl);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.NumberTxt);
             this.Name = "SubView";
-            this.Size = new System.Drawing.Size(130, 137);
+            this.Size = new System.Drawing.Size(134, 159);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -100,5 +112,6 @@
         private System.Windows.Forms.Label GenerationLbl;
         private System.Windows.Forms.Button button1;
         private SubSubView subSubView1;
+        private System.Windows.Forms.Button NewSubSubVMBtn;
     }
 }
