@@ -8,6 +8,6 @@ https://stackoverflow.com/questions/61124339
 
 The different Branches are important:
 
-- Master: Shows the origin szenario which does not work well.
-- CustomWorkaround: The szenario is fixed with a custom solution.
-- Nullable: Support for ViewModel-References which have no value.
+- [**Master**](https://github.com/Der-Kraken/Kraken.WinFormsBinding/commits/master): Shows the origin szenario which does not work well 
+- [**CustomWorkaround**](https://github.com/Der-Kraken/Kraken.WinFormsBinding/commits/CustomWorkaround): The szenario is fixed with a custom solution
+- [**Nullable**](https://github.com/Der-Kraken/Kraken.WinFormsBinding/commits/Nullable): Support for ViewModel-References which have no value
