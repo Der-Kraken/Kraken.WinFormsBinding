@@ -62,6 +62,12 @@ namespace Kraken.WinFormsBinding.View
             ViewModel.NewSubCommand.Execute(null);
         }
 
+        private void ResetSubViewModelBtn_Click(object sender, System.EventArgs e)
+        {
+            // Command is hard executed because to focus the project to the main problem.
+            ViewModel.ResetSubCommand.Execute(null);
+        }
+
         public void ObserveBindingPath(BindingSource bindingSource, string propPath)
         {
             var resolver = new PropertyChangedObserver(ViewModel, propPath);

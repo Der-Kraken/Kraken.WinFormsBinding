@@ -34,6 +34,7 @@ namespace Kraken.WinFormsBinding.View
             this.button1 = new System.Windows.Forms.Button();
             this.subSubView1 = new Kraken.WinFormsBinding.View.SubSubView();
             this.NewSubSubVMBtn = new System.Windows.Forms.Button();
+            this.ResetSubSubVMBtn = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // NumberTxt
@@ -82,16 +83,27 @@ namespace Kraken.WinFormsBinding.View
             // 
             this.NewSubSubVMBtn.Location = new System.Drawing.Point(16, 72);
             this.NewSubSubVMBtn.Name = "NewSubSubVMBtn";
-            this.NewSubSubVMBtn.Size = new System.Drawing.Size(106, 23);
+            this.NewSubSubVMBtn.Size = new System.Drawing.Size(50, 23);
             this.NewSubSubVMBtn.TabIndex = 5;
             this.NewSubSubVMBtn.Text = "New SubSubVM";
             this.NewSubSubVMBtn.UseVisualStyleBackColor = true;
             this.NewSubSubVMBtn.Click += new System.EventHandler(this.NewSubSubVMBtn_Click);
             // 
+            // ResetSubSubVMBtn
+            // 
+            this.ResetSubSubVMBtn.Location = new System.Drawing.Point(72, 72);
+            this.ResetSubSubVMBtn.Name = "ResetSubSubVMBtn";
+            this.ResetSubSubVMBtn.Size = new System.Drawing.Size(50, 23);
+            this.ResetSubSubVMBtn.TabIndex = 6;
+            this.ResetSubSubVMBtn.Text = "Reset";
+            this.ResetSubSubVMBtn.UseVisualStyleBackColor = true;
+            this.ResetSubSubVMBtn.Click += new System.EventHandler(this.ResetSubSubVMBtn_Click);
+            // 
             // SubView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.Controls.Add(this.ResetSubSubVMBtn);
             this.Controls.Add(this.NewSubSubVMBtn);
             this.Controls.Add(this.subSubView1);
             this.Controls.Add(this.button1);
@@ -113,5 +125,6 @@ namespace Kraken.WinFormsBinding.View
         private System.Windows.Forms.Button button1;
         private SubSubView subSubView1;
         private System.Windows.Forms.Button NewSubSubVMBtn;
+        private System.Windows.Forms.Button ResetSubSubVMBtn;
     }
 }

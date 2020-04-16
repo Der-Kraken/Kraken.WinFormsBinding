@@ -59,8 +59,13 @@ namespace Kraken.WinFormsBinding.View
         private void NewSubSubVMBtn_Click(object sender, System.EventArgs e)
         {
             ViewModel.NewSubSubCommand.Execute(null);
-            Unbind();
-            SetupBinding();
+            //Unbind();
+            //SetupBinding();
+        }
+
+        private void ResetSubSubVMBtn_Click(object sender, System.EventArgs e)
+        {
+            ViewModel.ResetSubSubCommand.Execute(null);
         }
     }
 }

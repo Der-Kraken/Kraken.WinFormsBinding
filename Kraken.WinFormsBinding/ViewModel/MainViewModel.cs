@@ -28,5 +28,10 @@ namespace Kraken.WinFormsBinding.ViewModel
         {
             NewestSubViewModel = new SubViewModel();
         });
+
+        public ICommand ResetSubCommand => new RelayCommand(() =>
+        {
+            NewestSubViewModel = null;
+        });
     }
 }

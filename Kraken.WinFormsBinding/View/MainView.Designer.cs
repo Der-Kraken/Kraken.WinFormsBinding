@@ -47,6 +47,7 @@ namespace Kraken.WinFormsBinding.View
             this.groupBox5 = new System.Windows.Forms.GroupBox();
             this.subViewSingletonClone = new Kraken.WinFormsBinding.View.SubView();
             this.label1 = new System.Windows.Forms.Label();
+            this.ResetSubViewModelBtn = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -92,10 +93,9 @@ namespace Kraken.WinFormsBinding.View
             // 
             // NewSubViewModelBtn
             // 
-            this.NewSubViewModelBtn.Dock = System.Windows.Forms.DockStyle.Top;
             this.NewSubViewModelBtn.Location = new System.Drawing.Point(3, 16);
             this.NewSubViewModelBtn.Name = "NewSubViewModelBtn";
-            this.NewSubViewModelBtn.Size = new System.Drawing.Size(348, 33);
+            this.NewSubViewModelBtn.Size = new System.Drawing.Size(162, 33);
             this.NewSubViewModelBtn.TabIndex = 7;
             this.NewSubViewModelBtn.Text = "Create New SubViewModel";
             this.NewSubViewModelBtn.UseVisualStyleBackColor = true;
@@ -103,6 +103,7 @@ namespace Kraken.WinFormsBinding.View
             // 
             // groupBox3
             // 
+            this.groupBox3.Controls.Add(this.ResetSubViewModelBtn);
             this.groupBox3.Controls.Add(this.SingletonSubSubViewModelTextTxt);
             this.groupBox3.Controls.Add(this.label4);
             this.groupBox3.Controls.Add(this.NewestSubSubViewModelTextTxt);
@@ -230,6 +231,16 @@ namespace Kraken.WinFormsBinding.View
             this.label1.TabIndex = 9;
             this.label1.Text = "----------------------------------------------";
             // 
+            // ResetSubViewModelBtn
+            // 
+            this.ResetSubViewModelBtn.Location = new System.Drawing.Point(183, 16);
+            this.ResetSubViewModelBtn.Name = "ResetSubViewModelBtn";
+            this.ResetSubViewModelBtn.Size = new System.Drawing.Size(165, 33);
+            this.ResetSubViewModelBtn.TabIndex = 17;
+            this.ResetSubViewModelBtn.Text = "Reset New SubViewModel";
+            this.ResetSubViewModelBtn.UseVisualStyleBackColor = true;
+            this.ResetSubViewModelBtn.Click += new System.EventHandler(this.ResetSubViewModelBtn_Click);
+            // 
             // MainView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -273,5 +284,6 @@ namespace Kraken.WinFormsBinding.View
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox NewestSubSubViewModelTextTxt;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Button ResetSubViewModelBtn;
     }
 }
