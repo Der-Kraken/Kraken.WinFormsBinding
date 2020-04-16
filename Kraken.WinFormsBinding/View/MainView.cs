@@ -33,8 +33,8 @@ namespace Kraken.WinFormsBinding.View
                     ObserveBindingPath(bindingSource, path);
                 }
 
-                subViewSingleton.DataBindings.Add("ViewModel", bindingSource, "SingletonSubViewModel");
-                subViewSingletonClone.DataBindings.Add("ViewModel", bindingSource, "SingletonSubViewModel");
+                subViewSingleton.DataBindings.Add("ViewModel", bindingSource, "SingletonSubViewModel", true, DataSourceUpdateMode.Never);
+                subViewSingletonClone.DataBindings.Add("ViewModel", bindingSource, "SingletonSubViewModel", true, DataSourceUpdateMode.Never);
             }
 
             // Right Side - Newest SubViewModel
@@ -49,8 +49,8 @@ namespace Kraken.WinFormsBinding.View
                 }
 
                 // This bindings are working well
-                subViewNewest.DataBindings.Add("ViewModel", bindingSource, "NewestSubViewModel");
-                subViewNewestClone.DataBindings.Add("ViewModel", bindingSource, "NewestSubViewModel");
+                subViewNewest.DataBindings.Add("ViewModel", bindingSource, "NewestSubViewModel", true, DataSourceUpdateMode.Never);
+                subViewNewestClone.DataBindings.Add("ViewModel", bindingSource, "NewestSubViewModel", true, DataSourceUpdateMode.Never);
             }
         }
 

@@ -37,12 +37,18 @@ namespace Kraken.WinFormsBinding.View
 
         private void SetupBinding()
         {
+            this.Enabled = ViewModel != null;
+            if (ViewModel == null)
+            {
+                return;
+            }
+
             _bindingSource = new BindingSource(this, nameof(ViewModel));
 
             GenerationLbl.DataBindings.Add(nameof(GenerationLbl.Text), _bindingSource, nameof(ViewModel.Generation), false, DataSourceUpdateMode.OnPropertyChanged);
             NumberTxt.DataBindings.Add(nameof(NumberTxt.Text), _bindingSource, nameof(ViewModel.Number), false, DataSourceUpdateMode.OnPropertyChanged);
 
-            subSubView1.DataBindings.Add(nameof(subSubView1.ViewModel), _bindingSource, "SubSubViewModel");
+            subSubView1.DataBindings.Add(nameof(subSubView1.ViewModel), _bindingSource, "SubSubViewModel", true, DataSourceUpdateMode.Never);
         }
 
         private void Unbind()
